@@ -9,8 +9,8 @@
 \usepackage{listings}
 \usepackage{charter}
 \usepackage{lmodern}
-\lstset{language=Mathematica,
-basicstyle=kcmss,
+\lstset{
+basicstyle=\ttfamily,
 numbers=left,
 numberstyle=\tiny, 
 stepnumber=1, 
@@ -38,12 +38,20 @@ keywordstyle=\bfseries,
 This report gives a briefly look about our code and progress in the \say{Outer Billiard} project. 
 
 \section{Background theory}
-\subsection{About symmetrical point}
+Two points are symmetrical if there correspond to the same distance of a middle point but are in the opposite direction. 
 
 \section{Approaching to the problem}
-We tried to 
+According to the background theory provided, there is one easy way to determine the position of its symmetrical point over a middle point by calculating the directional vector of the initial point to the middle point, then by translating it with that directional vector, we obtain the position of the symmetrical point that we are needed to find.
 
-\section{Result}
+Take one example, let assume there exists point \(K \ (x_K, y_K)\). Let \(L\ (x_L, y_L)\) be the middle point. The co-ordinate of the symmetrical point of \(K\) over \(L\) is \(M \ (x_M, y_M) \) can be calculate as \(x_M = x_L - x_K, \ y_M = y_L - y_K\). In order word, we have translated point B with vector \(\overrightarrow{LK}\).
+
+This concept can be demonstrate with a function (reflectPoint) in the appendix.
+
+One such issue exist in this problem is to ascertain which corner of the \(\triangle ABC\) to draw the next symmetrical point. As we have from the hypothesis, the billiard travel across the first corner, then the second, then the third, and repeat the process. Since the ball travels and marks the location before changing its direction, the number of marks determine which direction it goes when changing the direction.
+
+This can be solved using modularity. Let \(n\) be the marked location, including the initial location \(K \ (x_K, y_K)\). if \(n \equiv 1 (\mod 3)\), then balls goes over \(A\). If \(n \equiv 2 (\mod 3)\), then it goes over \(B\). If it is neither, then it goes over \(C\). This strategy works as drawing \(n\) segments require at least \(n+1\) points, and since the drawing process repeats over three corner of the equilateral triangle, the modularity of 3 of marked points determines the next directions the ball moves.
+
+\section{Demonstrations}
 Here  
 
 \section{Discussion}
@@ -51,7 +59,9 @@ Here
 
 \pagebreak
 \section{Appendix}
-\subsection{Function}
+\subsection{Mathematica}
+\subsubsection{Function}
+\lstset{language=Mathematica}
 \begin{lstlisting}
 (*
 Create a point of reflection over a middle point
@@ -64,30 +74,23 @@ yMove = -(outPoint[[2]]-middlePoint[[2]]);
 )
 \end{lstlisting} 
 
-\subsection{Main program}
+\subsubsection{Main program}
+
+\lstset{language=Mathematica}
 \begin{lstlisting}
-(*-----------------*)
+(*-------------BEGIN---------------*)
 Manipulate[
+(*-----------------*)
 (*Create the first equilateral triangle*)
 triangle1=Polygon[CirclePoints[3]];
 xA=0;yA=1; pointA={xA,yA}; textA= Text["A",{0.1,1}];
 xB=-(Sqrt[3]/2);yB=-(1/2); pointB={xB,yB}; textB = Text ["B",{-0.92,-0.54}];
 xC=Sqrt[3]/2; yC=-(1/2); pointC={xC,yC}; textC = Text["C",{0.92,-0.54}];
-
-(*Creating a point K randomly*)
-(*
-xK=RandomReal[{-4,4}];yK=RandomReal[{-4,4}];
-
-While[(xB<xK<xC)||(yB<yK<yA),
-xK=RandomReal[{-4,4}];yK=RandomReal[{-4,4}];
-]
-*)
 xK;yK; pointK={xK,yK}; textK=Text["K",{xK+0.1,yK+0.1}];
 pointList={pointK};
 
 (*Add everything to the plot2 initially*)
 plot2={EdgeForm[Directive[Thick,Blue]],Directive[White],triangle1,Directive[Black],Point[pointA],Point[pointB],Point[pointC],textA,textB,textC,PointSize[0.02],Point[pointK],textK};
-(*Done creating a equilateral triangle*)
 
 (*Add point to list*)
 doCtimes; doCtimes=Floor[doCtimes];
@@ -104,10 +107,12 @@ plot3={Blue,Point[pointList],Black,Line[pointList]};
 plot4={plot2,plot3};
 
 (*Export the result*)
+plot4={plot2,plot3};
 Show[Graphics[plot4],Axes-> True,AxesStyle->Black]
 (*-----------------*)
 
-,{{xK,2,"x-coordinate"},-5,5},{{yK,2,"y-coordinate"},-5,5},{{doCtimes,3,"Number of movements"},0,10}
+,{{xK,2,"x-coordinate"},-5,5},{{yK,2,"y-coordinate"},-5,5},{{doCtimes,3,"Number of movements"},0,10}]
+(*--------------END----------------*)
 \end{lstlisting}
 
 

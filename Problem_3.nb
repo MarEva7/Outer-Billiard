@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     38997,        923]
-NotebookOptionsPosition[     38543,        904]
-NotebookOutlinePosition[     38896,        920]
-CellTagsIndexPosition[     38853,        917]
+NotebookDataLength[     26129,        590]
+NotebookOptionsPosition[     25675,        571]
+NotebookOutlinePosition[     26028,        587]
+CellTagsIndexPosition[     25985,        584]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -43,284 +43,38 @@ Cell[BoxData[
   RowBox[{"(*", 
    RowBox[{
    "This", " ", "might", " ", "not", " ", "work", " ", "on", " ", 
-    "Mathematica", " ", "10", " ", "or", " ", "older"}], "*)"}], "\n", 
+    "Mathematica", " ", "10", " ", "or", " ", "older"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Cleaned", " ", "version"}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"--", 
+     RowBox[{"--", 
+      RowBox[{"--", 
+       RowBox[{"--", 
+        RowBox[{"--", 
+         RowBox[{"--", "Drafted"}]}]}]}]}]}], " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"function", "--"}], "--"}], "--"}], "--"}], "--"}], 
+    RowBox[{"--", 
+     RowBox[{"--", 
+      RowBox[{"--", "-"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", "\[IndentingNewLine]", 
+   RowBox[{
+   "Create", " ", "a", " ", "point", " ", "of", " ", "reflection", " ", 
+    "over", " ", "a", " ", "middle", " ", "point", "\[IndentingNewLine]", 
+    RowBox[{"Usage", ":", " ", 
+     RowBox[{"reflectPoint", "[", 
+      RowBox[{
+       RowBox[{"{", "outPoint", "}"}], ",", 
+       RowBox[{"{", "middlePoint", "}"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+   "*)"}], "\[IndentingNewLine]", 
   RowBox[{
-   RowBox[{
-   "Import", "[", 
-    "\"\<https://raw.githubusercontent.com/jkuczm/MathematicaCellsToTeX/\
-master/BootstrapInstall.m\>\"", "]"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", 
-        RowBox[{"--", 
-         RowBox[{"--", 
-          RowBox[{"--", "Drafted"}]}]}]}]}]}], " ", "function", " ", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{
-         RowBox[{"1", "--"}], "--"}], "--"}], "--"}], "--"}], 
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", "-"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-     RowBox[{"Adapted", " ", 
-      RowBox[{"from", ":", " ", "https", ":"}]}], "//", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{
-         RowBox[{"stackoverflow", ".", "com"}], "/", "questions"}], "/", 
-        "3938488"}], "/", "naming"}], "-", "variable", "-", "in", "-", 
-      "mathematica", "-", "with", "-", "an", "-", "algorithm"}]}], "*)"}], 
-   "\n", 
-   RowBox[{"(*", 
-    RowBox[{
-     RowBox[{
-      RowBox[{
-      "Function", " ", "getNextTrailingNumberInString", " ", "will", " ", 
-       "take", " ", "the", " ", "string", " ", "with", " ", "the", " ", "end",
-        " ", "variable", " ", "and", " ", "plus", " ", "1", 
-       "\[IndentingNewLine]", 
-       RowBox[{"Ex", ":", " ", 
-        RowBox[{
-        "getNextTrailingNumberInString", "[", "\"\<YourName12\>\"", "]"}]}]}],
-       " ", "\[Rule]", " ", "\"\<YourName13\>\""}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-      "getNextTrailingNumberInString", "[", "\"\<YourName19\>\"", "]"}], 
-      "\[Rule]", " ", "\"\<YourName20\>\""}], ";", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-      "getNextTrailingNumberInString", "[", "\"\<YourName99\>\"", "]"}], 
-      "\[Rule]", " ", "\"\<YourName100\>\""}], ";", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"If", " ", "no", " ", "number", " ", "found"}], " ", "\[Rule]", 
-      " ", 
-      RowBox[{"Print", " ", "the", " ", "string"}]}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"If", " ", "empty", " ", "string"}], " ", "\[Rule]", " ", 
-      "Break"}], ";", "\[IndentingNewLine]", 
-     RowBox[{
-     "Only", " ", "works", " ", "with", " ", "trailing", " ", "numbers"}], 
-     ";"}], "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"getNextTrailingNumberInString", "[", 
-     RowBox[{"varNum_", "?", "StringQ"}], "]"}], ":=", 
-    RowBox[{"(", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"If", "[", 
-        RowBox[{
-         RowBox[{"varNum", "\[Equal]", "\"\<\>\""}], ",", 
-         RowBox[{"Break", ";"}], ",", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"k", "=", 
-           RowBox[{"-", "1"}]}], ";", "\[IndentingNewLine]", 
-          RowBox[{"d", "=", 
-           RowBox[{"StringTake", "[", 
-            RowBox[{"varNum", ",", "k"}], "]"}]}], ";", "\[IndentingNewLine]", 
-          RowBox[{"z", "=", 
-           RowBox[{"NumberQ", "[", 
-            RowBox[{"ToExpression", "[", "d", "]"}], "]"}]}]}]}], "]"}], 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"While", "[", 
-        RowBox[{"z", ",", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"k", "=", 
-           RowBox[{"k", "-", "1"}]}], ";", "\[IndentingNewLine]", 
-          RowBox[{"d", "=", 
-           RowBox[{"StringTake", "[", 
-            RowBox[{"varNum", ",", "k"}], "]"}]}], ";", "\[IndentingNewLine]", 
-          RowBox[{"z", "=", 
-           RowBox[{"NumberQ", "[", 
-            RowBox[{"ToExpression", "[", "d", "]"}], "]"}]}]}]}], "]"}]}], 
-      ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{"NumberQ", "[", 
-         RowBox[{"ToExpression", "[", 
-          RowBox[{"StringTake", "[", 
-           RowBox[{"varNum", ",", 
-            RowBox[{"k", "+", "1"}]}], "]"}], "]"}], "]"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"d", "=", 
-          RowBox[{
-           RowBox[{"ToExpression", "[", 
-            RowBox[{"StringTake", "[", 
-             RowBox[{"d", ",", 
-              RowBox[{"k", "+", "1"}]}], "]"}], "]"}], "+", "1"}]}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"k", "=", 
-          RowBox[{"k", "+", "1", "+", 
-           RowBox[{"StringLength", "[", "varNum", "]"}]}]}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"StringTake", "[", 
-           RowBox[{"varNum", ",", "k"}], "]"}], "<>", 
-          RowBox[{"ToString", "[", "d", "]"}]}]}], ",", 
-        RowBox[{"StringTake", "[", 
-         RowBox[{"varNum", ",", 
-          RowBox[{"StringLength", "[", "varNum", "]"}]}], "]"}]}], "]"}]}], 
-     "\[IndentingNewLine]", ")"}]}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", 
-        RowBox[{"--", 
-         RowBox[{"--", 
-          RowBox[{"--", "Drafted"}]}]}]}]}]}], " ", "function", " ", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{
-         RowBox[{"1", "--"}], "--"}], "--"}], "--"}], "--"}], 
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", "-"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", 
-        RowBox[{"--", 
-         RowBox[{"--", 
-          RowBox[{"--", "Drafted"}]}]}]}]}]}], " ", "function", " ", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{
-         RowBox[{"2", "--"}], "--"}], "--"}], "--"}], "--"}], 
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", "-"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-     RowBox[{"Adapted", " ", 
-      RowBox[{"from", ":", " ", "https", ":"}]}], "//", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{
-         RowBox[{"stacoverflow", ".", "com"}], "/", "questions"}], "/", 
-        "393888"}], "/", "naming"}], "-", "variable", "-", "in", "-", 
-      "mathematica", "-", "with", "-", "an", "-", "algorithm"}]}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-    "Get", " ", "the", " ", "last", " ", "number", " ", "in", " ", "string", 
-     " ", "and", " ", "export", " ", "it"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"getTrailingNumberInString", "[", 
-     RowBox[{"varNum_", "?", "StringQ"}], "]"}], ":=", 
-    RowBox[{"(", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"If", "[", 
-        RowBox[{
-         RowBox[{"varNum", "\[Equal]", "\"\<\>\""}], ",", "Break", ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"k", "=", 
-           RowBox[{"-", "1"}]}], ";", "\[IndentingNewLine]", 
-          RowBox[{"d", "=", 
-           RowBox[{"StringTake", "[", 
-            RowBox[{"varNum", ",", "k"}], "]"}]}], ";", "\[IndentingNewLine]", 
-          RowBox[{"z", "=", 
-           RowBox[{"NumberQ", "[", 
-            RowBox[{"ToExpression", "[", "d", "]"}], "]"}]}]}]}], "]"}], 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"While", "[", 
-        RowBox[{"z", ",", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"k", "=", 
-           RowBox[{"k", "-", "1"}]}], ";", "\[IndentingNewLine]", 
-          RowBox[{"d", "=", 
-           RowBox[{"StringTake", "[", 
-            RowBox[{"varNum", ",", "k"}], "]"}]}], ";", "\[IndentingNewLine]", 
-          RowBox[{"z", "=", 
-           RowBox[{"NumberQ", "[", 
-            RowBox[{"ToExpression", "[", "d", "]"}], "]"}]}]}]}], "]"}]}], 
-      ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{"NumberQ", "[", 
-         RowBox[{"ToExpression", "[", 
-          RowBox[{"StringTake", "[", 
-           RowBox[{"varNum", ",", 
-            RowBox[{"k", "+", "1"}]}], "]"}], "]"}], "]"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"d", "=", 
-          RowBox[{"ToExpression", "[", 
-           RowBox[{"StringTake", "[", 
-            RowBox[{"d", ",", 
-             RowBox[{"k", "+", "1"}]}], "]"}], "]"}]}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"k", "=", 
-          RowBox[{"k", "+", "1", "+", 
-           RowBox[{"StringLength", "[", "varNum", "]"}]}]}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"StringTake", "[", 
-           RowBox[{"varNum", ",", "k"}], "]"}], "<>", 
-          RowBox[{"ToString", "[", "d", "]"}]}]}], ",", 
-        RowBox[{"StringTake", "[", 
-         RowBox[{"varNum", ",", 
-          RowBox[{"StringLength", "[", "varNum", "]"}]}], "]"}]}], "]"}]}], 
-     "\[IndentingNewLine]", ")"}]}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", 
-        RowBox[{"--", 
-         RowBox[{"--", 
-          RowBox[{"--", "Drafted"}]}]}]}]}]}], " ", "function", " ", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{
-         RowBox[{"2", "--"}], "--"}], "--"}], "--"}], "--"}], 
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", "-"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", 
-        RowBox[{"--", 
-         RowBox[{"--", 
-          RowBox[{"--", "Drafted"}]}]}]}]}]}], " ", "function", " ", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{
-         RowBox[{"3", "--"}], "--"}], "--"}], "--"}], "--"}], 
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", "-"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", "\[IndentingNewLine]", 
-    RowBox[{
-    "Create", " ", "a", " ", "point", " ", "of", " ", "reflection", " ", 
-     "over", " ", "a", " ", "middle", " ", "point", "\[IndentingNewLine]", 
-     RowBox[{"Usage", ":", " ", 
-      RowBox[{"reflectPoint", "[", 
-       RowBox[{
-        RowBox[{"{", "outPoint", "}"}], ",", 
-        RowBox[{"{", "middlePoint", "}"}]}], "]"}]}]}], "\[IndentingNewLine]",
-     "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"reflectPoint", "[", 
      RowBox[{
@@ -362,19 +116,16 @@ master/BootstrapInstall.m\>\"", "]"}], "\[IndentingNewLine]",
        RowBox[{"--", 
         RowBox[{"--", 
          RowBox[{"--", 
-          RowBox[{"--", "Drafted"}]}]}]}]}]}], " ", "function", " ", 
+          RowBox[{"--", "Drafted"}]}]}]}]}]}], " ", 
      RowBox[{
       RowBox[{
        RowBox[{
         RowBox[{
-         RowBox[{"3", "--"}], "--"}], "--"}], "--"}], "--"}], 
+         RowBox[{"function", "--"}], "--"}], "--"}], "--"}], "--"}], 
      RowBox[{"--", 
       RowBox[{"--", 
        RowBox[{"--", "-"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"End", " ", "of", " ", "drafted", " ", "functions"}], "*)"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{"--", 
@@ -455,44 +206,6 @@ master/BootstrapInstall.m\>\"", "]"}], "\[IndentingNewLine]",
          RowBox[{"{", 
           RowBox[{"0.92", ",", 
            RowBox[{"-", "0.54"}]}], "}"}]}], "]"}]}], ";", 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"(*", 
-       RowBox[{
-       "Creating", " ", "a", " ", "point", " ", "K", " ", "randomly"}], 
-       "*)"}], "\[IndentingNewLine]", 
-      RowBox[{"(*", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"xK", "=", 
-         RowBox[{"RandomReal", "[", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"-", "4"}], ",", "4"}], "}"}], "]"}]}], ";", 
-        RowBox[{"yK", "=", 
-         RowBox[{"RandomReal", "[", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"-", "4"}], ",", "4"}], "}"}], "]"}]}], ";", 
-        "\[IndentingNewLine]", "\[IndentingNewLine]", 
-        RowBox[{"While", "[", 
-         RowBox[{
-          RowBox[{
-           RowBox[{"(", 
-            RowBox[{"xB", "<", "xK", "<", "xC"}], ")"}], "||", 
-           RowBox[{"(", 
-            RowBox[{"yB", "<", "yK", "<", "yA"}], ")"}]}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"xK", "=", 
-            RowBox[{"RandomReal", "[", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"-", "4"}], ",", "4"}], "}"}], "]"}]}], ";", 
-           RowBox[{"yK", "=", 
-            RowBox[{"RandomReal", "[", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"-", "4"}], ",", "4"}], "}"}], "]"}]}], ";"}]}], 
-         "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "*)"}], 
       "\[IndentingNewLine]", "xK", ";", "yK", ";", " ", 
       RowBox[{"pointK", "=", 
        RowBox[{"{", 
@@ -526,11 +239,7 @@ master/BootstrapInstall.m\>\"", "]"}], "\[IndentingNewLine]",
          ",", "textC", ",", 
          RowBox[{"PointSize", "[", "0.02", "]"}], ",", 
          RowBox[{"Point", "[", "pointK", "]"}], ",", "textK"}], "}"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"(*", 
-       RowBox[{
-       "Done", " ", "creating", " ", "a", " ", "equilateral", " ", 
-        "triangle"}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"(*", 
        RowBox[{"Add", " ", "point", " ", "to", " ", "list"}], "*)"}], 
       "\[IndentingNewLine]", "doCtimes", ";", " ", 
@@ -592,6 +301,10 @@ master/BootstrapInstall.m\>\"", "]"}], "\[IndentingNewLine]",
       RowBox[{"(*", 
        RowBox[{"Export", " ", "the", " ", "result"}], "*)"}], 
       "\[IndentingNewLine]", 
+      RowBox[{"plot4", "=", 
+       RowBox[{"{", 
+        RowBox[{"plot2", ",", "plot3"}], "}"}]}], ";", "\[IndentingNewLine]", 
+      
       RowBox[{"Show", "[", 
        RowBox[{
         RowBox[{"Graphics", "[", "plot4", "]"}], ",", 
@@ -622,11 +335,7 @@ master/BootstrapInstall.m\>\"", "]"}], "\[IndentingNewLine]",
       RowBox[{
        RowBox[{"{", 
         RowBox[{"doCtimes", ",", "3", ",", "\"\<Number of movements\>\""}], 
-        "}"}], ",", "0", ",", "10"}], "}"}]}], "]"}], " ", 
-   RowBox[{"(*", 
-    RowBox[{
-    "Delete", " ", "this", " ", "line", " ", "if", " ", "you", " ", "have", 
-     " ", "removed", " ", "Manipulate"}], "*)"}], "\[IndentingNewLine]", 
+        "}"}], ",", "0", ",", "10"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{"--", 
@@ -643,53 +352,6 @@ master/BootstrapInstall.m\>\"", "]"}], "\[IndentingNewLine]",
       RowBox[{"--", 
        RowBox[{"--", 
         RowBox[{"--", "--"}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Draft", " ", "--"}], " ", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"Approaching", " ", "the", " ", 
-       RowBox[{"problem", ":", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"-", " ", "Create"}], " ", "a", " ", "equilateral", " ", 
-          "triangle", " ", "ABC"}], "\[IndentingNewLine]", "-", " ", 
-         RowBox[{
-         "Create", " ", "point", " ", "K", " ", "outside", " ", "of", " ", 
-          "triangle", " ", "ABC"}], "\[IndentingNewLine]", "-", " ", 
-         RowBox[{"Create", " ", "a", " ", "reflective", " ", "point"}], 
-         "\[IndentingNewLine]", "-", " ", "Check"}], ":", " ", 
-        RowBox[{
-        "if", " ", "total", " ", "element", " ", "of", " ", "list", " ", 
-         "mod", " ", "3"}]}]}], " ", "=", " ", "1"}], ",", " ", 
-     RowBox[{"reflect", " ", "over", " ", "A"}], ",", " ", 
-     RowBox[{
-      RowBox[{"if", " ", "it", " ", "mod", " ", "3"}], " ", "=", " ", "2"}], 
-     ",", " ", 
-     RowBox[{"reflect", " ", "over", " ", "B"}], ",", " ", 
-     RowBox[{
-      RowBox[{"else", " ", "reflect", " ", "over", " ", "C"}], 
-      "\[IndentingNewLine]", "-", " ", 
-      RowBox[{
-      "Repeat", " ", "the", " ", "procedure", " ", "for", " ", "n", " ", 
-       "time"}]}]}], "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"Think", " ", "left", " ", "to", " ", 
-      RowBox[{"fix", ":", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"-", " ", "Generate"}], " ", "a", " ", "point", " ", 
-        "OUTSIDE", " ", "of", " ", "the", " ", "triangle"}]}]}], 
-     "\[IndentingNewLine]", "\[Rule]", "  ", 
-     RowBox[{
-      RowBox[{"Fix", " ", "1"}], ":", " ", 
-      RowBox[{
-      "Generate", " ", "a", " ", "point", " ", "outside", " ", "of", " ", "a",
-        " ", "rectange", " ", "covered", " ", "by", " ", "the", " ", 
-       RowBox[{"triangle", "."}]}]}]}], "\[IndentingNewLine]", "*)"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
    "\[IndentingNewLine]"}]}]], "Input",
  CellChangeTimes->{{3.713543756849215*^9, 3.713543827247652*^9}, {
    3.713543881130192*^9, 3.7135439081533937`*^9}, {3.7135440444802732`*^9, 
@@ -801,49 +463,52 @@ master/BootstrapInstall.m\>\"", "]"}], "\[IndentingNewLine]",
    3.7140737948388767`*^9}, {3.7140738362044783`*^9, 
    3.7140738680274878`*^9}, {3.714073937525873*^9, 3.71407393922925*^9}, {
    3.714074430792726*^9, 3.714074431107409*^9}, {3.714074887157958*^9, 
-   3.714074888503737*^9}},
+   3.714074888503737*^9}, {3.71415395742949*^9, 3.7141540950085506`*^9}, {
+   3.714154433425496*^9, 3.7141544340090227`*^9}},
  TextAlignment->Left,ExpressionUUID->"72423db5-35a8-40ce-9fcb-a4e3e361d776"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
    DynamicModuleBox[{$CellContext`doCtimes$$ = 3, $CellContext`xK$$ = 
-    2, $CellContext`yK$$ = 0.9400000000000004, Typeset`show$$ = True, 
+    2, $CellContext`yK$$ = 2, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{{
        Hold[$CellContext`xK$$], 2, "x-coordinate"}, -5, 5}, {{
        Hold[$CellContext`yK$$], 2, "y-coordinate"}, -5, 5}, {{
        Hold[$CellContext`doCtimes$$], 3, "Number of movements"}, 0, 10}}, 
-    Typeset`size$$ = {360., {136., 141.}}, Typeset`update$$ = 0, 
+    Typeset`size$$ = {360., {136., 140.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`xK$32376$$ = 0, $CellContext`yK$32377$$ = 
-    0, $CellContext`doCtimes$32378$$ = 0}, 
+    True, $CellContext`xK$13980$$ = 0, $CellContext`yK$13981$$ = 
+    0, $CellContext`doCtimes$13982$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`doCtimes$$ = 3, $CellContext`xK$$ = 
         2, $CellContext`yK$$ = 2}, "ControllerVariables" :> {
-        Hold[$CellContext`xK$$, $CellContext`xK$32376$$, 0], 
-        Hold[$CellContext`yK$$, $CellContext`yK$32377$$, 0], 
-        Hold[$CellContext`doCtimes$$, $CellContext`doCtimes$32378$$, 0]}, 
+        Hold[$CellContext`xK$$, $CellContext`xK$13980$$, 0], 
+        Hold[$CellContext`yK$$, $CellContext`yK$13981$$, 0], 
+        Hold[$CellContext`doCtimes$$, $CellContext`doCtimes$13982$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$}, 
       "Body" :> ($CellContext`triangle1 = Polygon[
-          CirclePoints[3]]; $CellContext`xC = 
-        Sqrt[3]/2; $CellContext`yC = -(1/
-          2); $CellContext`pointB = {$CellContext`xB, $CellContext`yB}; \
-$CellContext`xA = 0; $CellContext`yA = 
+          CirclePoints[3]]; $CellContext`xA = 0; $CellContext`yA = 
         1; $CellContext`pointA = {$CellContext`xA, $CellContext`yA}; \
-$CellContext`xB = -(Sqrt[3]/2); $CellContext`yB = -(1/
+$CellContext`textA = 
+        Text["A", {0.1, 1}]; $CellContext`xB = -(Sqrt[3]/
+          2); $CellContext`yB = -(1/
+          2); $CellContext`pointB = {$CellContext`xB, $CellContext`yB}; \
+$CellContext`textB = Text["B", {-0.92, -0.54}]; $CellContext`xC = 
+        Sqrt[3]/2; $CellContext`yC = -(1/
           2); $CellContext`pointC = {$CellContext`xC, $CellContext`yC}; \
-$CellContext`textA = Text["A", {0.1, 1}]; $CellContext`textC = 
-        Text["C", {0.92, -0.54}]; $CellContext`textB = 
-        Text[
-         "B", {-0.92, -0.54}]; $CellContext`pointK = {$CellContext`xK$$, \
-$CellContext`yK$$}; $CellContext`textK = 
+$CellContext`textC = 
+        Text["C", {
+          0.92, -0.54}]; $CellContext`xK$$; $CellContext`yK$$; \
+$CellContext`pointK = {$CellContext`xK$$, $CellContext`yK$$}; \
+$CellContext`textK = 
         Text["K", {$CellContext`xK$$ + 0.1, $CellContext`yK$$ + 
            0.1}]; $CellContext`pointList = {$CellContext`pointK}; \
 $CellContext`plot2 = {
@@ -878,6 +543,7 @@ $CellContext`doCtimes$$; $CellContext`doCtimes$$ =
           Point[$CellContext`pointList], Black, 
           
           Line[$CellContext`pointList]}; $CellContext`plot4 = \
+{$CellContext`plot2, $CellContext`plot3}; $CellContext`plot4 = \
 {$CellContext`plot2, $CellContext`plot3}; Show[
          Graphics[$CellContext`plot4], Axes -> True, AxesStyle -> Black]), 
       "Specifications" :> {{{$CellContext`xK$$, 2, "x-coordinate"}, -5, 
@@ -897,9 +563,10 @@ $CellContext`doCtimes$$; $CellContext`doCtimes$$ =
   Manipulate`InterpretManipulate[1]]], "Output",
  CellChangeTimes->{{3.7137822773993187`*^9, 3.713782296601357*^9}, 
    3.7138628423702497`*^9, 3.714065440124797*^9, 3.714071409590765*^9, {
-   3.714073504029201*^9, 
-   3.714073565268208*^9}},ExpressionUUID->"a8e4eb3d-dbca-4c44-a2bb-\
-890662045339"]
+   3.714073504029201*^9, 3.714073565268208*^9}, 3.714153941667821*^9, 
+   3.7141540335250263`*^9, 
+   3.714154093004776*^9},ExpressionUUID->"c7527dab-4904-4fd3-86bd-\
+63365bb01f1c"]
 }, Open  ]]
 },
 WindowSize->{999, 752},
@@ -920,10 +587,10 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 33152, 782, 2993, "Input", "ExpressionUUID" -> \
+Cell[580, 22, 20112, 445, 1313, "Input", "ExpressionUUID" -> \
 "72423db5-35a8-40ce-9fcb-a4e3e361d776"],
-Cell[33735, 806, 4792, 95, 441, "Output", "ExpressionUUID" -> \
-"a8e4eb3d-dbca-4c44-a2bb-890662045339"]
+Cell[20695, 469, 4964, 99, 441, "Output", "ExpressionUUID" -> \
+"c7527dab-4904-4fd3-86bd-63365bb01f1c"]
 }, Open  ]]
 }
 ]

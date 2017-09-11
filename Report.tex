@@ -1,0 +1,114 @@
+\documentclass[11pt, a4paper]{article}
+
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{dirtytalk}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{charter}
+\usepackage{lmodern}
+\lstset{language=Mathematica,
+basicstyle=kcmss,
+numbers=left,
+numberstyle=\tiny, 
+stepnumber=1, 
+numbersep=5pt, 
+breaklines=true,
+postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+keywordstyle=\bfseries,
+}
+
+\begin{document}
+
+\title{Outer Billiard Report}
+\author{Evan Huynh}
+\maketitle
+
+
+
+\begin{abstract}
+	This report gives a briefly look about our code and progress in the \say{Outer Billiard} project.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+This report gives a briefly look about our code and progress in the \say{Outer Billiard} project. 
+
+\section{Background theory}
+\subsection{About symmetrical point}
+
+\section{Approaching to the problem}
+We tried to 
+
+\section{Result}
+Here  
+
+\section{Discussion}
+Here
+
+\pagebreak
+\section{Appendix}
+\subsection{Function}
+\begin{lstlisting}
+(*
+Create a point of reflection over a middle point
+Usage: reflectPoint[{outPoint},{middlePoint}]}
+*)
+reflectPoint[outPoint_?ListQ,middlePoint_?ListQ]:=(
+xMove = -(outPoint[[1]]-middlePoint[[1]]);
+yMove = -(outPoint[[2]]-middlePoint[[2]]);
+{middlePoint[[1]]+xMove,middlePoint[[2]]+yMove}
+)
+\end{lstlisting} 
+
+\subsection{Main program}
+\begin{lstlisting}
+(*-----------------*)
+Manipulate[
+(*Create the first equilateral triangle*)
+triangle1=Polygon[CirclePoints[3]];
+xA=0;yA=1; pointA={xA,yA}; textA= Text["A",{0.1,1}];
+xB=-(Sqrt[3]/2);yB=-(1/2); pointB={xB,yB}; textB = Text ["B",{-0.92,-0.54}];
+xC=Sqrt[3]/2; yC=-(1/2); pointC={xC,yC}; textC = Text["C",{0.92,-0.54}];
+
+(*Creating a point K randomly*)
+(*
+xK=RandomReal[{-4,4}];yK=RandomReal[{-4,4}];
+
+While[(xB<xK<xC)||(yB<yK<yA),
+xK=RandomReal[{-4,4}];yK=RandomReal[{-4,4}];
+]
+*)
+xK;yK; pointK={xK,yK}; textK=Text["K",{xK+0.1,yK+0.1}];
+pointList={pointK};
+
+(*Add everything to the plot2 initially*)
+plot2={EdgeForm[Directive[Thick,Blue]],Directive[White],triangle1,Directive[Black],Point[pointA],Point[pointB],Point[pointC],textA,textB,textC,PointSize[0.02],Point[pointK],textK};
+(*Done creating a equilateral triangle*)
+
+(*Add point to list*)
+doCtimes; doCtimes=Floor[doCtimes];
+Do[
+If[Mod[Length[pointList],3]==1,
+pointList=AppendTo[pointList,reflectPoint[Last[pointList],pointA]];,
+If [Mod[Length[pointList],3]==2,
+pointList=AppendTo[pointList,reflectPoint[Last[pointList],pointB]];,
+pointList=AppendTo[pointList,reflectPoint[Last[pointList],pointC]];
+]
+]
+,doCtimes];
+plot3={Blue,Point[pointList],Black,Line[pointList]};
+plot4={plot2,plot3};
+
+(*Export the result*)
+Show[Graphics[plot4],Axes-> True,AxesStyle->Black]
+(*-----------------*)
+
+,{{xK,2,"x-coordinate"},-5,5},{{yK,2,"y-coordinate"},-5,5},{{doCtimes,3,"Number of movements"},0,10}
+\end{lstlisting}
+
+
+\end{document}

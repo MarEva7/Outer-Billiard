@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {2}Method}{2}
+\contentsline {section}{\numberline {3}Result}{2}
+\contentsline {section}{\numberline {4}Discussion}{2}
+\contentsline {section}{\numberline {5}Appendix}{4}
+\contentsline {subsection}{\numberline {5.1}Mathematica}{4}
+\contentsline {subsubsection}{\numberline {5.1.1}Function}{4}
+\contentsline {subsubsection}{\numberline {5.1.2}Main program}{4}

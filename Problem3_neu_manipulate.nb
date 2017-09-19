@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     21923,        538]
-NotebookOptionsPosition[     21480,        520]
-NotebookOutlinePosition[     21822,        535]
-CellTagsIndexPosition[     21779,        532]
+NotebookDataLength[     21968,        538]
+NotebookOptionsPosition[     21525,        520]
+NotebookOutlinePosition[     21867,        535]
+CellTagsIndexPosition[     21824,        532]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -200,15 +200,14 @@ Cell[BoxData[
        RowBox[{"If", "[", 
         RowBox[{
          RowBox[{
-          RowBox[{"yK", ">", 
+          RowBox[{"yK", "<", 
            RowBox[{"h", "[", "xK", "]"}]}], "&&", 
-          RowBox[{"yK", ">", 
+          RowBox[{"yK", "<", 
            RowBox[{"g", "[", "xK", "]"}]}], "&&", 
           RowBox[{"yK", ">", "f"}]}], ",", "\[IndentingNewLine]", 
          RowBox[{
-          RowBox[{"Goto", "[", "innerTriangle", "]"}], ";"}]}], 
-        "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
+          RowBox[{"Goto", "[", "end", "]"}], ";"}]}], "\[IndentingNewLine]", 
+        "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"(*", 
         RowBox[{
          RowBox[{
@@ -270,8 +269,7 @@ Cell[BoxData[
                RowBox[{"Last", "[", "pointList", "]"}], ",", "pointC"}], 
               "]"}]}], "]"}]}], "]"}], ";"}], "\[IndentingNewLine]", ",", 
         "n"}], "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Label", "[", "innerTriangle", "]"}], ";", 
-      "\[IndentingNewLine]", 
+      RowBox[{"Label", "[", "end", "]"}], ";", "\[IndentingNewLine]", 
       RowBox[{"(*", 
        RowBox[{
         RowBox[{"--", 
@@ -338,19 +336,19 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"{", 
         RowBox[{"xK", ",", 
-         RowBox[{"-", "2"}], ",", "\"\<x-coordinate\>\""}], "}"}], ",", 
+         RowBox[{"-", "1"}], ",", "\"\<x-coordinate\>\""}], "}"}], ",", 
        RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{
        RowBox[{"{", 
         RowBox[{"yK", ",", 
-         RowBox[{"-", "2"}], ",", "\"\<y-coordinate\>\""}], "}"}], ",", 
+         RowBox[{"-", "0.5"}], ",", "\"\<y-coordinate\>\""}], "}"}], ",", 
        RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{
        RowBox[{"{", 
-        RowBox[{"n", ",", "15", ",", "\"\<Number of movements\>\""}], "}"}], 
-       ",", "1", ",", "100"}], "}"}]}], "]"}], 
+        RowBox[{"n", ",", "30", ",", "\"\<Number of movements\>\""}], "}"}], 
+       ",", "1", ",", "30"}], "}"}]}], "]"}], 
    "\[IndentingNewLine]"}]}]], "Input",
  CellChangeTimes->{{3.714818879447117*^9, 3.714819089100312*^9}, {
    3.7148191948844914`*^9, 3.71481920980212*^9}, {3.7148194023266354`*^9, 
@@ -415,32 +413,33 @@ Cell[BoxData[
    3.7148502898047633`*^9}, {3.7148506889246883`*^9, 
    3.7148507141760235`*^9}, {3.714850769913858*^9, 3.714850773461043*^9}, {
    3.714850854814475*^9, 3.7148509038459516`*^9}, {3.7148509341256065`*^9, 
-   3.7148509436404977`*^9}},ExpressionUUID->"168d4572-9466-4d28-b3f2-\
+   3.7148509436404977`*^9}, {3.714852305926797*^9, 
+   3.7148523870001545`*^9}},ExpressionUUID->"168d4572-9466-4d28-b3f2-\
 dad49b3cde65"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`n$$ = 15, $CellContext`xK$$ = 
-    5., $CellContext`yK$$ = 5., Typeset`show$$ = True, 
-    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+   DynamicModuleBox[{$CellContext`n$$ = 
+    30, $CellContext`xK$$ = -1, $CellContext`yK$$ = -0.5, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`xK$$], -2, "x-coordinate"}, -5, 5}, {{
-       Hold[$CellContext`yK$$], -2, "y-coordinate"}, -5, 5}, {{
-       Hold[$CellContext`n$$], 15, "Number of movements"}, 1, 100}}, 
-    Typeset`size$$ = {360., {176., 182.}}, Typeset`update$$ = 0, 
+       Hold[$CellContext`xK$$], -1, "x-coordinate"}, -5, 5}, {{
+       Hold[$CellContext`yK$$], -0.5, "y-coordinate"}, -5, 5}, {{
+       Hold[$CellContext`n$$], 30, "Number of movements"}, 1, 30}}, 
+    Typeset`size$$ = {360., {179., 185.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`xK$1957$$ = 0, $CellContext`yK$1962$$ = 
-    0, $CellContext`n$1963$$ = 0}, 
+    True, $CellContext`xK$7870$$ = 0, $CellContext`yK$7871$$ = 
+    0, $CellContext`n$7872$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`n$$ = 
-        15, $CellContext`xK$$ = -2, $CellContext`yK$$ = -2}, 
+        30, $CellContext`xK$$ = -1, $CellContext`yK$$ = -0.5}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`xK$$, $CellContext`xK$1957$$, 0], 
-        Hold[$CellContext`yK$$, $CellContext`yK$1962$$, 0], 
-        Hold[$CellContext`n$$, $CellContext`n$1963$$, 0]}, 
+        Hold[$CellContext`xK$$, $CellContext`xK$7870$$, 0], 
+        Hold[$CellContext`yK$$, $CellContext`yK$7871$$, 0], 
+        Hold[$CellContext`n$$, $CellContext`n$7872$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -452,9 +451,9 @@ $CellContext`n$$ =
 $CellContext`yK$$}; $CellContext`textK = 
         Text["K", {$CellContext`xK$$ + 0.1, $CellContext`yK$$ + 0.1}]; If[
           
-          And[$CellContext`yK$$ > $CellContext`h[$CellContext`xK$$], \
-$CellContext`yK$$ > $CellContext`g[$CellContext`xK$$], $CellContext`yK$$ > \
-$CellContext`f], Goto[$CellContext`innerTriangle]; 
+          And[$CellContext`yK$$ < $CellContext`h[$CellContext`xK$$], \
+$CellContext`yK$$ < $CellContext`g[$CellContext`xK$$], $CellContext`yK$$ > \
+$CellContext`f], Goto[$CellContext`end]; 
           Null] ($CellContext`pointList = {$CellContext`pointK}); 
        Do[$CellContext`xP = First[
             Last[$CellContext`pointList]]; $CellContext`yP = Last[
@@ -477,8 +476,7 @@ $CellContext`yP <= $CellContext`f],
            AppendTo[$CellContext`pointList, 
             $CellContext`reflectPoint[
              Last[$CellContext`pointList], $CellContext`pointC]]]; 
-         Null, $CellContext`n$$]; 
-       Label[$CellContext`innerTriangle]; $CellContext`plot2 = {
+         Null, $CellContext`n$$]; Label[$CellContext`end]; $CellContext`plot2 = {
           EdgeForm[
            Directive[Thick, Blue]], 
           Directive[White], $CellContext`triangle1, 
@@ -497,12 +495,12 @@ $CellContext`textC,
           Line[$CellContext`pointList]}; $CellContext`plot4 = \
 {$CellContext`plot2, $CellContext`plot3}; Show[
          Graphics[$CellContext`plot4], Axes -> True, AxesStyle -> Black, 
-         PlotRange -> {{-10, 10}, {-10, 10}}]), 
-      "Specifications" :> {{{$CellContext`xK$$, -2, "x-coordinate"}, -5, 
-         5}, {{$CellContext`yK$$, -2, "y-coordinate"}, -5, 
-         5}, {{$CellContext`n$$, 15, "Number of movements"}, 1, 100}}, 
+         PlotRange -> {{-6, 6}, {-6, 6}}]), 
+      "Specifications" :> {{{$CellContext`xK$$, -1, "x-coordinate"}, -5, 
+         5}, {{$CellContext`yK$$, -0.5, "y-coordinate"}, -5, 
+         5}, {{$CellContext`n$$, 30, "Number of movements"}, 1, 30}}, 
       "Options" :> {}, "DefaultOptions" :> {}],
-     ImageSizeCache->{411., {251., 257.}},
+     ImageSizeCache->{411., {254., 260.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -513,9 +511,11 @@ $CellContext`textC,
    Deployed->True,
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{3.714849990666978*^9, 3.714850207866762*^9, 
-  3.714850284716259*^9, 3.7148507256395245`*^9, 
-  3.71485090994243*^9},ExpressionUUID->"1a4e37fa-d6ca-4acc-a79b-c51765705832"]
+ CellChangeTimes->{
+  3.714849990666978*^9, 3.714850207866762*^9, 3.714850284716259*^9, 
+   3.7148507256395245`*^9, 3.71485090994243*^9, {3.714852352643092*^9, 
+   3.714852389934503*^9}},ExpressionUUID->"70957a14-043b-4948-ac5d-\
+57f78e65aac0"]
 }, Open  ]]
 },
 WindowSize->{748, 948},
@@ -535,10 +535,10 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 16201, 396, 1578, "Input", "ExpressionUUID" -> \
+Cell[580, 22, 16219, 395, 1578, "Input", "ExpressionUUID" -> \
 "168d4572-9466-4d28-b3f2-dad49b3cde65"],
-Cell[16784, 420, 4680, 97, 525, "Output", "ExpressionUUID" -> \
-"1a4e37fa-d6ca-4acc-a79b-c51765705832"]
+Cell[16802, 419, 4707, 98, 564, "Output", "ExpressionUUID" -> \
+"70957a14-043b-4948-ac5d-57f78e65aac0"]
 }, Open  ]]
 }
 ]

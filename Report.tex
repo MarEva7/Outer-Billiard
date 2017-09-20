@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt, a4paper]{article}
+\documentclass[a4paper,11pt]{article}
 
 
 \usepackage{amsmath,amssymb}
@@ -27,7 +27,7 @@ keywordstyle=\bfseries,
 \begin{document}
 
 \title{Outer Billiard Report}
-\author{Evan Huynh}
+\author{Evan Huynh, Marcel Vosshans}
 \maketitle
 
 \begin{abstract}
@@ -49,6 +49,8 @@ As stated in the problem, the ball outside of the triangle travels a distance \(
 One such issue exist in this problem is to ascertain which corner of the \(\triangle ABC\) to draw the next symmetrical point. From the hypothesis, the billiard travel across the first corner, then the second, then the third, and repeat the process. Since the ball travels and marks the location before changing its direction, the number of marks determine which direction it goes when changing the direction.
 
 To repeat the process systematically, we first let the ball travels to \(A\) then \(B\) and \(C\), consecutively. This can be solved using modularity. Let \(n\) be the marked location, including the initial location \(K \ (x_K, y_K)\). if \(n \equiv 1 \pmod 3\) the ball goes toward \(A\), or if \(n \equiv 2 \pmod 3\), it goes over \(B\). else it runs to \(C\). This strategy works as drawing \(n\) segments require at least \(n+1\) points, and since the drawing process repeats over three corner of the equilateral triangle, the modularity of 3 of marked points determines the next directions the ball moves.
+
+Also, another direction that need to be considered is to check whether the next line that need to be check whether the next line will cross the triangle. To address this, we considered 
 
 \section{Result}
 \begin{figure}

@@ -1,0 +1,67 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{dirtytalk}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{charter}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\lstset{
+basicstyle=\ttfamily,
+numbers=left,
+numberstyle=\tiny,
+stepnumber=1,
+numbersep=5pt,
+breaklines=true,
+postbreak=\mbox{\textcolor{red}{\(\hookrightarrow\)}\space},
+keywordstyle=\bfseries,
+}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{url}
+
+\begin{document}
+\title{Outer Billiard Report}
+\author{Evan Huynh, Marcel Vosshans}
+\maketitle
+
+\begin{abstract}
+In the following report, we analyse the trajectory of a billiard ball if the ball tangents a corner of an equilateral triangle and moves the same distance forward, it needed to the corner. The question is: Can the ball escape? A Mathematica model simulates this model with the result, that the ball can’t escape from the triangle. This is a simplified model about our solar system and the possibility of an escaping planet based on a billiard table.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+Imagine a billiard table with a triangle on it. A billiard ball runs toward to one of the corners with constant speed \(v_{1}\). The way \(d_{1}\) it needs to the corner, is also the distance it runs forward (from the corner). Then the ball targets the next corner and got a new distance to the corner \(d_{2}\), which is also the new distance away from that corner. This procedure it makes \(n\) times. The total distance amount to:
+
+\[n=d_{1}+d_{2}+\dots+d_{n}\]
+
+The question is: Can the billiard ball escape from the triangle (divergent) or is there a border to reach which would be the local maximum circle around the triangle (convergent). This theory describes a mathematical model of the solar system an the possibility of an escaping planet (for example the Pluto [currently a dwarf planet]).
+	
+\subsection{Setup for the Model}
+In Mathematica, we first create a triangle by using CirclePoint[3]. This gives an output of three points needed to generate an equilateral triangle, with the center of gravity at \((0,0)\). Then the output data is used in order to 
+
+\subsubsection{A subheading}
+
+
+\section{Results}
+
+
+
+\section{Discussion}
+As seen from the result by our calculations, the ball always returns to the initial point K after a number of movement. However, the smallest number of the movement it takes before returning to K depends heavily on the coordinate of the initial point. As K locates nearer to the triangle, the least number of movement increase.
+
+Contradictorily, if K are on a line or coincide with any two points of the triangle, by design of the algorithm, the movement will continue indefinitely in different direction, meaning the ball will never returns to K, if we let the ball moves forever. Note that the ball will never start to if it locate inside the triangle.
+
+\begin{thebibliography}{99}
+
+ \bibitem{doc}Wolfram Language \& System, \url{http://reference.wolfram.com/language/}, 2017.09.20.
+
+
+\end{thebibliography}
+
+\end{document}

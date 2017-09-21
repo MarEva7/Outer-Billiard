@@ -45,18 +45,26 @@ The question is: Can the billiard ball escape from the triangle (divergent) or i
 \section{Method}
 In Mathematica, we first create a triangle by using CirclePoint[3]. This gives an output of three points needed to generate an equilateral triangle \(\triangle ABC\), with the circumcenter at \((0,0)\). Then, the initial point K locates somewhere outside of \(\triangle ABC\).
 
-\subsection{Implementing the reflectPoint function}
-According to the instruction, the ball moves toward a corner with distance \(d_{1}\), then move another distance \(d_{1}\) before moving toward another corner without crossing the triangle. It can be solved by using vector. Since the ball has moved with a vector \( q\vec{i} + p\vec{j}\) toward one corner, it also move \( q\vec{i} + p\vec{j}\) away from it.
+\subsection{Translating the ball to the new location}
+According to the instruction, the ball moves toward a corner with distance \(d_{1}\), then move another distance \(d_{1}\) before moving toward another corner without crossing the triangle. It can be solved by using vector. Since the ball has moved with a vector \( q\vec{i} + p\vec{j}\) toward one corner, it also move \(q\vec{i} + p\vec{j}\) away from it.
+
+By implementing the reflectPoint function (see attached nb file), the new point translate \(q\vec{i} + p\vec{j}\) from the corner, calculated by the subtracting the coordinate of one corner into the point that needs to reflect.
+
+\subsection{Checking location of the ball}
+Another problem arises to this algorithm is that we have to check the location to know which corner to cross next without crossing inside the triangle. Interestingly, we can extend the three segment infinitely and call three functions 
+
+\subsection{Checking whether the ball is inside the triangle}
+
 
 \section{Results}
-
+Here are some generated outputs from the programs.
 
 \section{Discussion}
-The program can be repeated as many times as possible within the degree of computational power. None the less, we checked all the possible location of \(K\); no single line had crossed the triangle.
+The program can be repeated as many times as possible within the degree of computational power. None the less, we checked all the possible location of \(K\); no single line had crossed the triangle. Also, if a line has been drawn when the initial point is outside of the triangle, it cannot be erased if moved toward the triangle without reseting the program.
 
 As seen from the result by our calculations, the ball always returns to the initial point \(K\) after some movement. However, the smallest number of the movement it takes before returning to \(K\) is highly dependent on the coordinate of the original point. The least number of movements increase as \(K\) is nearer the triangle. 
 
-Exceptionally, if \(K\) is on a line or coincides with any two points of the triangle, by design of the algorithm, the movement will continue indefinitely in the different direction, meaning the ball will never return to \(K\) if we let the ball moves forever. Note that the program will not run if \(K\) is inside the triangle. 
+There are two known exceptions to this program. They occurs if \(K\) is on a line or coincides with any two points of the triangle. By design of the algorithm, the movement will continue indefinitely in the different direction and thus break the law of periodicity.
 
 \begin{thebibliography}{99}
 
